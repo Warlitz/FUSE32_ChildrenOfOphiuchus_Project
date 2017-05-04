@@ -22,7 +22,7 @@ public class people : MonoBehaviour
     {
         GetComponent<Renderer>().material.color = Color.clear;
         m_Audio = GetComponent<AudioSource>();
-        peoplePosition = transform.position;
+        //peoplePosition = transform.position;
     }
 
     // Update is called once per frame
@@ -70,6 +70,7 @@ public class people : MonoBehaviour
                 if (!m_Audio.isPlaying)
                 {
                     m_Audio.Play();
+                    player.GetComponent<Player>().rescuecount += 1;
                     Destroy(this.gameObject, m_Audio.clip.length);
                 }
             }

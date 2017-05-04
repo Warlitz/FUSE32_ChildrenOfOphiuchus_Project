@@ -23,7 +23,7 @@ public class CloudSpawner : MonoBehaviour
 
         while (true)
         {
-            spawnPosition = new Vector3(Random.Range(positionRandamize, -positionRandamize), spawnPosition.y, spawnPosition.z);
+            spawnPosition = new Vector3( spawnPosition.x + (Random.Range(positionRandamize, -positionRandamize)), spawnPosition.y, spawnPosition.z);
             Instantiate(Cloud, spawnPosition, Quaternion.identity);
             yield return new WaitForSeconds(interval);
         }

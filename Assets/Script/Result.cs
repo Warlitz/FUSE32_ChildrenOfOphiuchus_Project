@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Result : MonoBehaviour {
 
+    float timer = 0f;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -13,7 +15,9 @@ public class Result : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.JoystickButton0))
+        timer += Time.deltaTime;
+
+        if((Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.JoystickButton0)) && timer > 3)
         { 
 
         SceneManager.LoadScene("Title");

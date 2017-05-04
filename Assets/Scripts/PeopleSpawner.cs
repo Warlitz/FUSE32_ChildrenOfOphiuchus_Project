@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnamySpawner : MonoBehaviour {
+public class PeopleSpawner : MonoBehaviour {
 
     public GameObject people;//enemyプレハブ
 
     public float interval;//敵の発生間隔
 
-    public float positionRanamize;//発生位置をランダムにする幅の指定
+    public float positionRandamize;//発生位置をランダムにする幅の指定
     public float maxtime;
     public float mintime;
     public float latetime = 0.125f;
@@ -21,8 +21,9 @@ public class EnamySpawner : MonoBehaviour {
 
         while (true)
         {
-            spawnPosition.x += Random.Range(-positionRanamize, positionRanamize);
-    
+            //spawnPosition = transform.position;
+            spawnPosition = new Vector3(spawnPosition.x + (Random.Range(positionRandamize, -positionRandamize)), spawnPosition.y, spawnPosition.z);
+
             Instantiate(people, spawnPosition, Quaternion.identity);
             count++;
 
@@ -31,7 +32,7 @@ public class EnamySpawner : MonoBehaviour {
             {
                 randmax = mintime;
             }
-            interval = Random.Range(0, randmax);
+            interval = Random.Range(mintime, randmax);
             yield return new WaitForSeconds(interval);
         }
 	}

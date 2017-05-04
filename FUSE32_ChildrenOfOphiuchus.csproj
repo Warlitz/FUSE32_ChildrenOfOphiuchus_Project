@@ -87,6 +87,7 @@
     <Compile Include="Assets\Script\Result.cs" />
     <Compile Include="Assets\Script\ResultDisplay.cs" />
     <Compile Include="Assets\Script\RetryButton.cs" />
+    <Compile Include="Assets\Script\Shutter.cs" />
     <Compile Include="Assets\Script\Test.cs" />
     <Compile Include="Assets\Script\Text.cs" />
     <Compile Include="Assets\Script\Title.cs" />

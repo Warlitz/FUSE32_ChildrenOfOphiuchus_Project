@@ -23,6 +23,9 @@ public class Player : MonoBehaviour {
     private string SceneName;
 
     [SerializeField]
+    private string ClearScene;
+
+    [SerializeField]
     private Sprite jump_sprite;
     [SerializeField]
     private Sprite[] run_sprites;
@@ -41,6 +44,9 @@ public class Player : MonoBehaviour {
     GameObject hiteffect;
 
     private SpriteRenderer render;
+
+    public int rescuecount = 0;
+    int clearborder = 5;
 
 	void Start () {
         render = GetComponent<SpriteRenderer>();
@@ -67,6 +73,12 @@ public class Player : MonoBehaviour {
             Destroy(init_recovery_effect);
 
         ChangeSprite();
+
+        if(rescuecount >= clearborder)
+        {
+            SceneManager.LoadScene(ClearScene);
+        }
+
     }
 
     void PlayerMove()

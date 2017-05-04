@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PeopleSpawner : MonoBehaviour {
+public class EnamySpawner : MonoBehaviour {
 
     public GameObject people;//enemyプレハブ
 
